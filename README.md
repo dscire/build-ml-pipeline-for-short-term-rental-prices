@@ -6,6 +6,10 @@ The submission for the course can be found at:
 
 https://github.com/dscire/build-ml-pipeline-for-short-term-rental-prices.git
 
+The W&B experiments can be found at:
+
+https://wandb.ai/dsciretti-/nyc_airbnb
+
 ## ORIGINAL README CONTENT FROM HERE
 
 
