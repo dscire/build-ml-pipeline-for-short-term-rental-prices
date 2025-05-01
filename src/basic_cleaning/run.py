@@ -36,14 +36,14 @@ def go(args):
     idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
     df = df[idx].copy()
 
-    df.to_csv("clean_sample.csv", index=False)
+    df.to_csv(args.output_artifact, index=False)
 
     artifact = wandb.Artifact(
         args.output_artifact,
         type=args.output_type,
         description=args.output_description,
         )
-    artifact.add_file("clean_sample.csv")
+    artifact.add_file(args.output_artifact)
     run.log_artifact(artifact)
 
 if __name__ == "__main__":

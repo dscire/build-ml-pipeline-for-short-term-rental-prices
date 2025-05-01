@@ -13,7 +13,6 @@ import json
 
 import pandas as pd
 import numpy as np
-from mlflow.models import infer_signature
 from sklearn.compose import ColumnTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.impute import SimpleImputer
@@ -99,13 +98,11 @@ def go(args):
     ######################################
     # Save the sk_pipe pipeline as a mlflow.sklearn model in the directory "random_forest_dir"
     # HINT: use mlflow.sklearn.save_model
-    # signature = infer_signature(X_val[processed_features], y_pred)
     
     mlflow.sklearn.save_model(
         sk_pipe,
         "random_forest_dir",
         serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE,
-        # signature=signature,
         input_example=X_val.iloc[:2],
     )
     
